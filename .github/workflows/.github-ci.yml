@@ -1,0 +1,15 @@
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  script:
+    - echo "Building the application..."
+    - pip install -r requirements.txt
+
+deploy:
+  stage: deploy
+  script:
+    - echo "Deploying the application..."
+    - ssh user@your-server 'bash -s' < deploy-script.sh
